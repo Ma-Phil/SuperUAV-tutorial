@@ -1,0 +1,62 @@
+{
+  "title": "基础动力与供电链路",
+  "disclaimer": "模块级教学示意，不是焊盘级精确接线图。",
+  "parts": [
+    {
+      "id": "battery",
+      "name": "6S 电池",
+      "photo": "../photos/battery-6s.png",
+      "doc": "../../parts/battery.md"
+    },
+    {
+      "id": "esc",
+      "name": "4 合 1 电调",
+      "photo": "../photos/esc-f60a-mini-4in1-front.png",
+      "doc": "../../parts/esc.md"
+    },
+    {
+      "id": "motor",
+      "name": "F90 电机 KV1300",
+      "photo": "../photos/motor-f90-kv1300.png",
+      "doc": "../../parts/motor.md"
+    },
+    {
+      "id": "stepdown-5v",
+      "name": "5V 降压模块",
+      "photo": "../photos/stepdown-5v-front.png",
+      "doc": "../../parts/stepdown-5v.md"
+    },
+    {
+      "id": "flight-controller",
+      "name": "飞控",
+      "photo": "../photos/flight-controller-front.png",
+      "doc": "../../parts/flight-controller.md"
+    }
+  ],
+  "links": [
+    {
+      "step": 1,
+      "from": "battery",
+      "to": "esc",
+      "label": "主电源正负极"
+    },
+    {
+      "step": 2,
+      "from": "esc",
+      "to": "motor",
+      "label": "电机三相线"
+    },
+    {
+      "step": 3,
+      "from": "battery",
+      "to": "stepdown-5v",
+      "label": "降压输入"
+    },
+    {
+      "step": 4,
+      "from": "stepdown-5v",
+      "to": "flight-controller",
+      "label": "5V/GND 输出"
+    }
+  ]
+}
