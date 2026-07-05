@@ -29,17 +29,13 @@
 
 当前可直接下载并导入的参数文件：
 
-- [下载 Super01_Gate15SD.params](https://github.com/Ma-Phil/SuperUAV-tutorial/raw/master/Super01_Gate15SD.params)
+- [下载 Super01_Gate15SD.params](../assets/params/Super01_Gate15SD.params)
 
 导入时勾选需要覆盖的参数并确认：
 
 ![确认导入参数](../assets/qgc/qgc-params-import-confirm.png){ .wide-photo }
 
-建议后续把固定参数文件放到项目的 `docs/assets/params/` 或 `params/` 目录，文件名使用：
-
-```text
-px4-v1.13.3-super-mid360-vision-pose.params
-```
+该参数文件随站点一起发布，源码位置为 `docs/assets/params/Super01_Gate15SD.params`。
 
 导入后重点抽查：
 

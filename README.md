@@ -11,14 +11,16 @@
 │   ├── hardware/          # 硬件连线
 │   ├── flight-debug/      # 飞控调试
 │   ├── nuc/               # NUC 配置
-│   ├── assets/            # 图片、图表和数据资源
+│   ├── assets/            # 图片、图表、参数文件和数据资源
 │   └── stylesheets/       # 自定义样式
 ├── mkdocs.yml             # MkDocs 配置
 ├── requirements.txt       # 构建依赖
-└── .github/workflows/     # GitHub Pages 自动构建与部署
+├── .github/workflows/     # GitHub Pages 自动构建与部署
+├── .gitignore
+└── README.md
 ```
 
-根目录中的 `index.html`、`hardware/`、`flight-debug/`、`nuc/` 等 HTML 文件是历史静态站点产物。后续维护应优先修改 `docs/` 下的 Markdown 源码，再通过 MkDocs 重新构建。
+`docs/` 是唯一的页面源码与站点资源目录。GitHub Pages 不直接发布仓库根目录文件，而是通过 GitHub Actions 运行 MkDocs，把生成的 `site/` artifact 部署出去。
 
 ## 本地预览
 
@@ -66,6 +68,16 @@ mkdocs build --strict -d .verify-site
 4. 部署到 GitHub Pages。
 
 GitHub 仓库的 Pages 设置需要使用 `GitHub Actions` 作为发布源。
+
+## 参数文件
+
+固定参数文件放在：
+
+```text
+docs/assets/params/Super01_Gate15SD.params
+```
+
+站点构建后会随 `assets/params/` 一起发布，可在“方案一：导入已有参数文件”页面中下载。
 
 ## 依赖版本
 
