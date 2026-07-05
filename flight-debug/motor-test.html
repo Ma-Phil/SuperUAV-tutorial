@@ -1130,18 +1130,10 @@
 </tbody>
 </table>
 <p>对照图：</p>
-<p><img alt="电机顺序与转向参考" class="part-photo" src="../assets/qgc/qgc-motor-order-reference.png" /></p>
+<p><img alt="电机顺序与转向参考" class="part-photo motor-order-reference" src="../assets/qgc/qgc-motor-order-reference.png" /></p>
 <h2 id="_3">编号不对：先改信号线</h2>
 <p>如果 QGC 中 Motor 1 控制的不是前右电机，或 Motor 2/3/4 的物理位置不对应，优先检查飞控与电调之间的 ESC1~ESC4 信号线顺序。</p>
 <p><img alt="飞控与电调信号线连接" class="wide-photo" src="../assets/detail/esc-to-fc-signal-wiring.jpg" /></p>
-<p>原则是：</p>
-<div class="highlight"><pre><span></span><code>ESC1 -&gt; FMU_CH1 -&gt; Motor 1
-ESC2 -&gt; FMU_CH2 -&gt; Motor 2
-ESC3 -&gt; FMU_CH3 -&gt; Motor 3
-ESC4 -&gt; FMU_CH4 -&gt; Motor 4
-GND  -&gt; FMU GND
-</code></pre></div>
-<p>如果 4in1 电调实际安装方向导致某个物理电机焊在不同编号的电调铜板上，应按物理位置重新安排 ESC 信号线，而不是强行按铜板编号。</p>
 <h2 id="dshot">编号正确但方向错误：优先 DShot 反转</h2>
 <p>当 Motor ID 对应正确，但旋转方向错误时，进入 QGC 的 MAVLink Console：</p>
 <p><img alt="MAVLink Console 中 DShot 反转" class="wide-photo" src="../assets/qgc/qgc-mavlink-console-dshot.png" /></p>

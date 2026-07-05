@@ -1250,15 +1250,15 @@ rostopic<span class="w"> </span><span class="nb">echo</span><span class="w"> </s
 </code></pre></div>
 <h3 id="4-px4">4. 检查 PX4 本地位置输出</h3>
 <p>再检查本地位置输出是否稳定：</p>
-<div class="highlight"><pre><span></span><code>rostopic<span class="w"> </span>hz<span class="w"> </span>/mavros/local_position/pose
-rostopic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/mavros/local_position/pose
+<div class="highlight"><pre><span></span><code>rostopic<span class="w"> </span>hz<span class="w"> </span>/mavros/local_position/odom
+rostopic<span class="w"> </span><span class="nb">echo</span><span class="w"> </span>/mavros/local_position/odom
 </code></pre></div>
 <h2 id="_2">通过标准</h2>
 <ul>
 <li><code>/mavros/state</code> 显示 <code>connected: True</code>。</li>
 <li><code>/mavros/imu/data</code> 有连续输出。</li>
 <li><code>/mavros/vision_pose/pose</code> 有稳定频率。</li>
-<li><code>/mavros/local_position/pose</code> 在外部定位启动后稳定输出。</li>
+<li><code>/mavros/local_position/odom</code> 在外部定位启动后稳定输出，并确认话题格式对齐。</li>
 <li>移动或轻微晃动机体时，本地位置不会明显跳变或持续漂移。</li>
 </ul>
 <h2 id="_3">参数说明</h2>

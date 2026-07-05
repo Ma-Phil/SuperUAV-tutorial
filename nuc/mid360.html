@@ -1128,8 +1128,7 @@ sudo<span class="w"> </span>make<span class="w"> </span>install
 sudo<span class="w"> </span>ldconfig
 </code></pre></div>
 <div class="admonition note">
-<p class="admonition-title">Livox SDK2 不需要 source</p>
-<p>Livox SDK2 是底层 C/C++ SDK，不是 ROS 工作空间。按官方 README，<code>sudo make install</code> 会把库安装到 <code>/usr/local/lib</code>，把头文件安装到 <code>/usr/local/include</code>；因此编译 <code>livox_ros_driver2</code> 前不需要 <code>source ~/rosprojects/init_mav/livox_SDK/...</code>。</p>
+<p class="admonition-title">确认安装完成</p>
 <p>正确顺序是：先完成 Livox SDK2 的 <code>sudo make install</code>，再 <code>source /opt/ros/noetic/setup.bash</code> 编译 <code>livox_ros_driver2</code>。如果后续运行时报找不到 Livox SDK2 动态库，优先确认 <code>sudo make install</code> 和 <code>sudo ldconfig</code> 是否执行完成。</p>
 </div>
 <h2 id="livox_ros_driver2">安装 livox_ros_driver2</h2>

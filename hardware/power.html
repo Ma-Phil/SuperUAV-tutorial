@@ -1271,17 +1271,21 @@
 
 <h1 id="_1">动力与供电</h1>
 <p>动力供电从 XT60 主电源分出四条关键支路。先按本页接线步骤完成主电源、降压模块、电调、电机和电容，再查看后面的部件说明与检查点。</p>
+<div class="admonition note">
+<p class="admonition-title">接线关系示意</p>
+<p>当前只是接线关系示意。实际装机时需要先把飞控、电调、电机、降压模块、雷达和 NUC 等模块固定在机架上，并固定好各段连线；实际线路走向参考已有 Super 飞机。</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">先测电压，再接飞控</p>
 <p>5V 降压输出接飞控前，必须先用万用表确认输出电压与极性。不要把电池高压直接接到飞控 5V / Power 输入。</p>
 </div>
 <h2 id="_2">接线步骤</h2>
 <ol>
-<li>XT60 电源线 -&gt; 19V 降压 -&gt; 雷达 / NUC 供电与网口线材 -&gt; 并联雷达与 NUC。</li>
-<li>XT60 电源线 -&gt; F60 MINI 4IN1 V2 电调主电源端。</li>
 <li>F60 MINI 4IN1 V2 电调 -&gt; F90 电机 KV1300 三相线。</li>
+<li>XT60 电源线 -&gt; F60 MINI 4IN1 V2 电调主电源端。</li>
 <li>50V 2200uF 外接电容并接在电调主电源输入端附近。</li>
 <li>XT60 电源线 -&gt; 5V 降压 -&gt; 飞控 Power 接口。</li>
+<li>XT60 电源线 -&gt; 19V 降压 -&gt; 雷达 / NUC 供电与网口线材。</li>
 </ol>
 <h2 id="_3">部件说明</h2>
 <h3 id="_4">主电源与降压模块</h3>

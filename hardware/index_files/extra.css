@@ -262,20 +262,6 @@
   box-shadow: 0 8px 26px rgba(15, 23, 42, 0.08);
 }
 
-.motor-rotation-standard {
-  display: block;
-  width: 400px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.motor-order-reference {
-  display: block;
-  width: 400px;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
 .hardware-frame {
   height: 1080px;
   min-height: 980px;

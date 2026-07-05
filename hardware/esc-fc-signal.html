@@ -1075,10 +1075,15 @@
 <p class="admonition-title">不要接错输出口</p>
 <p>接 FMU PWM OUT / AUX OUT，不是 I/O PWM OUT / MAIN OUT。电调信号线只需要信号和地线，不需要把电调的 V 接到飞控的 <code>+ / VDD_SERVO</code>。</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">编号含义与最终判定</p>
+<p><code>ESC1</code>、<code>ESC2</code>、<code>ESC3</code>、<code>ESC4</code> 对应电调丝印 “1 2 3 4”；<code>FMU_CH1</code>、<code>FMU_CH2</code>、<code>FMU_CH3</code>、<code>FMU_CH4</code> 对应飞控 FMU PWM OUT 的 “1 2 3 4”。飞控侧 <code>S + -</code> 符号在接口侧面，对应三排针脚：<code>S</code> 为信号，<code>+</code> 为 VDD_SERVO，<code>-</code> 为 GND。</p>
+<p><code>ESC1</code>、<code>ESC2</code>、<code>ESC3</code>、<code>ESC4</code> 与 <code>FMU_CH1</code>、<code>FMU_CH2</code>、<code>FMU_CH3</code>、<code>FMU_CH4</code> 不能只按编号直接认定正确。初始接线后必须按 <a href="../flight-debug/motor-test.html#motor-id">Motor ID 与期望转向</a> 点动核对；若物理位置不对，调整 ESC 信号线，最终以 Motor ID 和期望转向全部正确为准。</p>
+</div>
 <h2 id="_2">接线步骤</h2>
 <ol>
 <li>从 F60 MINI 4IN1 V2 的 8pin SH1.0 线中保留 <code>ESC1</code>、<code>ESC2</code>、<code>ESC3</code>、<code>ESC4</code>、<code>GND</code> 五根线。</li>
-<li>将 <code>ESC1</code>、<code>ESC2</code>、<code>ESC3</code>、<code>ESC4</code> 分别接到 PIX6C MINI FMU PWM OUT / AUX OUT 的 <code>FMU_CH1</code>、<code>FMU_CH2</code>、<code>FMU_CH3</code>、<code>FMU_CH4</code> 信号位。</li>
+<li>初始可将 <code>ESC1</code>、<code>ESC2</code>、<code>ESC3</code>、<code>ESC4</code> 分别接到 PIX6C MINI FMU PWM OUT / AUX OUT 的 <code>FMU_CH1</code>、<code>FMU_CH2</code>、<code>FMU_CH3</code>、<code>FMU_CH4</code> 信号位，后续按电机测试结果调整。</li>
 <li>将电调 <code>GND</code> 接到 FMU PWM OUT 的 <code>- / GND</code>。</li>
 <li><code>T</code>、<code>C</code>、<code>V</code> 三根线不接飞控，单独绝缘。</li>
 <li>接完后只做通电和 QGC 电机点动验证，不安装桨叶。</li>
@@ -1100,22 +1105,22 @@
 <tr>
 <td>1</td>
 <td>ESC1 / M1 信号</td>
-<td>接 FMU_CH1 的 S</td>
+<td>初始接 FMU_CH1 的 S，最终按 Motor ID 调整</td>
 </tr>
 <tr>
 <td>2</td>
 <td>ESC2 / M2 信号</td>
-<td>接 FMU_CH2 的 S</td>
+<td>初始接 FMU_CH2 的 S，最终按 Motor ID 调整</td>
 </tr>
 <tr>
 <td>3</td>
 <td>ESC3 / M3 信号</td>
-<td>接 FMU_CH3 的 S</td>
+<td>初始接 FMU_CH3 的 S，最终按 Motor ID 调整</td>
 </tr>
 <tr>
 <td>4</td>
 <td>ESC4 / M4 信号</td>
-<td>接 FMU_CH4 的 S</td>
+<td>初始接 FMU_CH4 的 S，最终按 Motor ID 调整</td>
 </tr>
 <tr>
 <td>T</td>
@@ -1160,19 +1165,19 @@
 <tbody>
 <tr>
 <td>ESC1 / 1</td>
-<td>FMU_CH1 的 S</td>
+<td>初始接 FMU_CH1 的 S，最终按 Motor ID 调整</td>
 </tr>
 <tr>
 <td>ESC2 / 2</td>
-<td>FMU_CH2 的 S</td>
+<td>初始接 FMU_CH2 的 S，最终按 Motor ID 调整</td>
 </tr>
 <tr>
 <td>ESC3 / 3</td>
-<td>FMU_CH3 的 S</td>
+<td>初始接 FMU_CH3 的 S，最终按 Motor ID 调整</td>
 </tr>
 <tr>
 <td>ESC4 / 4</td>
-<td>FMU_CH4 的 S</td>
+<td>初始接 FMU_CH4 的 S，最终按 Motor ID 调整</td>
 </tr>
 <tr>
 <td>G</td>
@@ -1186,7 +1191,7 @@
 </table>
 <h2 id="_4">电机编号原则</h2>
 <p>后续飞控调试中的电机测试应按 PX4 电机顺序核对：</p>
-<p><img alt="电机转向标准" class="wide-photo" src="../assets/detail/motor-rotation-standard.png" /></p>
+<p><img alt="电机转向标准" class="wide-photo motor-rotation-standard" src="../assets/detail/motor-rotation-standard.png" /></p>
 <div class="highlight"><pre><span></span><code>              机头
                ↑
 
@@ -1228,7 +1233,7 @@
 </tbody>
 </table>
 <p>本机电机为倒置安装时，仍应统一按“从机体上方俯视”的方向去对照标准图；不要把从机体下方仰视看到的方向直接当成 PX4 方向。倒置安装通常影响桨叶正反和安装面，不改变 PX4 的 Motor ID 对应关系。</p>
-<p>如果电调安装方向或电机焊接位置导致物理电机编号不同，应先确认电机焊在哪个电调铜板编号，再把对应 ESC 信号线接到飞控定义的 Motor ID 通道。</p>
+<p>如果电调安装方向或电机焊接位置导致物理电机编号不同，应先确认电机焊在哪个电调铜板编号，再按 <a href="../flight-debug/motor-test.html#motor-id">Motor ID 与期望转向</a> 调整 ESC 信号线到对应 FMU 通道。</p>
 <h2 id="_5">后续验证</h2>
 <p>完成接线后，进入 <a href="../flight-debug/motor-test.html">电机测试与反转</a> 页面，用 QGC 点动 Motor 1~4。若编号不对先调整 ESC1~ESC4 信号线；若编号正确但转向错误，优先使用 DShot 命令反转，最后才交换电机三相线。</p>
 

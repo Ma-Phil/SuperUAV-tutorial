@@ -1067,7 +1067,7 @@
 <li><code>/livox/lidar</code> 或 driver2 对应话题有稳定频率。</li>
 <li>Point-LIO 持续输出位姿 / 里程计。</li>
 <li><code>/mavros/vision_pose/pose</code> 有稳定频率。</li>
-<li><code>/mavros/local_position/pose</code> 在外部定位启动后稳定输出。</li>
+<li><code>/mavros/local_position/odom</code> 在外部定位启动后稳定输出，并确认话题格式对齐。</li>
 </ul>
 <h2 id="_4">整合启动脚本</h2>
 <p>下面的脚本用于分步验证通过后的整合启动。桥接节点必须插在 Point-LIO-new 启动之后、EKF 检查之前；桥接配置见 <a href="point-lio.html#point-lio-mavros-vision-pose-bridge">Point-LIO-new 安装与调参</a>，这里仅保留插入位置，不新增具体桥接源码。</p>

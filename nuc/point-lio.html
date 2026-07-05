@@ -1127,6 +1127,7 @@
 
 <h1 id="point-lio-new">Point-LIO-new 安装与调参</h1>
 <p>本页用于安装当前 Super 机使用的 <strong>Point-LIO-new</strong>，并记录 <code>mapping_avia.launch</code> 与 <code>avia.yaml</code> 中需要重点检查的调参项。Point-LIO-new 依赖 Livox ROS Driver 2，因此先完成 <a href="mid360.html">Mid-360 雷达配置</a> 中的 Livox SDK2 和 livox_ros_driver2 安装。</p>
+<p>Point-LIO-new 安装是主定位链路必须完成的步骤；后面的调参内容仅供雷达定位输出异常、漂移或初始化问题时排查参考，正常安装验证时不需要逐项改参数。</p>
 <p>固定路径：</p>
 <div class="highlight"><pre><span></span><code>~/rosprojects/init_mav/lio_ws/src/point_lio_new
 </code></pre></div>
@@ -1183,6 +1184,10 @@ rostopic<span class="w"> </span><span class="nb">echo</span><span class="w"> </s
 </code></pre></div>
 <p>如果 <code>/mavros/vision_pose/pose</code> 没有稳定输出，不要继续做 EKF 融合检查；先回到 Point-LIO 输出、桥接节点和 MAVROS 话题排查。</p>
 <h2 id="_2">调参注意</h2>
+<div class="admonition warning">
+<p class="admonition-title">调参仅作排查参考</p>
+<p>调参内容仅供雷达定位输出异常、漂移或初始化问题时排查参考，正常安装验证时不需要逐项改参数。</p>
+</div>
 <h3 id="mapping_avialaunch">mapping_avia.launch</h3>
 <p>重点检查：</p>
 <div class="highlight"><pre><span></span><code><span class="nt">space_down_sample</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
