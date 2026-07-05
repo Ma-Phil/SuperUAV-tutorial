@@ -1,0 +1,50 @@
+site_name: 无人机制作教程
+site_description: 面向初学者的无人机零件识别与接线教程
+site_url: ""
+use_directory_urls: false
+
+theme:
+  name: material
+  language: zh
+  favicon: assets/images/favicon.png
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: blue grey
+      accent: deep orange
+
+nav:
+  - 教程总览: index.md
+  - 一、硬件连线:
+      - 总览: hardware/index.md
+      - 动力与供电: hardware/power.md
+      - 电调到飞控信号: hardware/esc-fc-signal.md
+      - 飞控到遥控接收器: hardware/receiver.md
+      - 通电前检查: hardware/checklist.md
+  - 二、飞控调试:
+      - 总览: flight-debug/index.md
+      - 方案一：导入参数文件: flight-debug/import-params.md
+      - 方案二：新飞控手动调参: flight-debug/manual-params.md
+      - 电机测试与反转: flight-debug/motor-test.md
+      - EKF Gate 与融合检查: flight-debug/ekf-gate.md
+  - 三、NUC 配置:
+      - 总览: nuc/index.md
+      - Mid-360 雷达配置: nuc/mid360.md
+      - Point-LIO-new 安装与调参: nuc/point-lio.md
+      - PX6C USB 连接 MAVROS: nuc/px6c-usb-mavros.md
+      - 启动脚本与启动顺序: nuc/startup.md
+      - RealSense 可选配置: nuc/realsense.md
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.superfences
+
+extra_css:
+  - stylesheets/extra.css
