@@ -2,6 +2,9 @@
 
 本页用于确认 Point-LIO 经过 MAVROS `vision_pose` 入口后，是否已经进入 PX4 EKF2 融合。使用本页前，应先完成 NUC 侧 MAVROS、Mid-360、Point-LIO 和 `/mavros/vision_pose/pose` 桥接。
 
+!!! warning "先完成 NUC 配置"
+    EKF Gate 与融合检查必须在完成 NUC 配置后再进行。不要在 Mid-360、MAVROS、Point-LIO 和 `vision_pose` 桥接未完成时进入本页检查。
+
 !!! warning "先有 vision_pose，再看 EKF"
     如果 `/mavros/vision_pose/pose` 没有稳定输出，不要继续调 EKF Gate。先回到 NUC 启动链路、Point-LIO 输出和桥接节点排查。
 

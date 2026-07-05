@@ -17,31 +17,34 @@
 
 <div class="progress-phase-row">
 <div class="progress-phase-corner">泳道 / 阶段</div>
-<div class="progress-phase-cell">0 准备</div>
 <div class="progress-phase-cell">1 硬件安装</div>
 <div class="progress-phase-cell">2 硬件检查</div>
 <div class="progress-phase-cell">3 飞控配置</div>
 <div class="progress-phase-cell">4 电机门禁</div>
-<div class="progress-phase-cell">5 NUC 安装</div>
-<div class="progress-phase-cell">6 外部定位</div>
-<div class="progress-phase-cell">7 EKF 检查</div>
+<div class="progress-phase-cell">5 手飞测试</div>
+<div class="progress-phase-cell">6 EKF 检查</div>
+<div class="progress-phase-cell">7 自主飞行测试</div>
 </div>
 
 <div class="progress-lane" markdown>
 <div class="progress-lane-title">硬件装配</div>
-<a class="progress-step progress-step-hardware progress-col-1 progress-span-1" href="hardware/power.html">
+<div class="progress-slot progress-col-1 progress-span-1" markdown>
+<a class="progress-step progress-step-hardware" href="hardware/power.html">
 <strong>动力与供电</strong>
 <span>先测电压</span>
 </a>
-<a class="progress-step progress-step-gate progress-col-2 progress-span-1" href="hardware/checklist.html">
+</div>
+<div class="progress-slot progress-col-2 progress-span-1" markdown>
+<a class="progress-step progress-step-gate" href="hardware/checklist.html">
 <strong>通电前检查</strong>
 <span>电源/信号/机械</span>
 </a>
 </div>
+</div>
 
 <div class="progress-lane" markdown>
 <div class="progress-lane-title">控制链路</div>
-<div class="progress-branch progress-col-1 progress-span-1">
+<div class="progress-slot progress-branch progress-col-1 progress-span-1" markdown>
 <a class="progress-step progress-step-hardware" href="hardware/esc-fc-signal.html">
 <strong>电调信号</strong>
 <span>ESC1~4/GND</span>
@@ -51,11 +54,13 @@
 <span>供电并共地</span>
 </a>
 </div>
-<a class="progress-step progress-step-gate progress-col-2 progress-span-1" href="hardware/checklist.html">
+<div class="progress-slot progress-col-2 progress-span-1" markdown>
+<a class="progress-step progress-step-gate" href="hardware/checklist.html">
 <strong>信号线核对</strong>
 <span>不接电调V</span>
 </a>
-<div class="progress-branch progress-col-3 progress-span-1">
+</div>
+<div class="progress-slot progress-branch progress-col-3 progress-span-1" markdown>
 <a class="progress-step progress-step-flight" href="flight-debug/import-params.html">
 <strong>QGC 参数</strong>
 <span>导入或手调</span>
@@ -65,23 +70,38 @@
 <span>走FMU输出</span>
 </a>
 </div>
-<a class="progress-step progress-step-gate progress-col-4 progress-span-1" href="flight-debug/motor-test.html">
+<div class="progress-slot progress-col-4 progress-span-1" markdown>
+<a class="progress-step progress-step-gate" href="flight-debug/motor-test.html">
 <strong>Motor 1~4 门禁</strong>
 <span>编号和转向</span>
 </a>
 </div>
+</div>
+
+<div class="progress-lane" markdown>
+<div class="progress-lane-title">飞行测试</div>
+<div class="progress-slot progress-col-5 progress-span-1" markdown>
+<a class="progress-step progress-step-flight" href="flight-debug/manual-flight-test.html">
+<strong>手飞测试</strong>
+<span>通过后进NUC</span>
+</a>
+</div>
+<div class="progress-slot progress-col-7 progress-span-1" markdown>
+<a class="progress-step progress-step-gate" href="flight-debug/orbit-autonomous-test.html">
+<strong>自主飞行测试</strong>
+<span>EKF通过后</span>
+</a>
+</div>
+</div>
 
 <div class="progress-lane" markdown>
 <div class="progress-lane-title">NUC 主链路</div>
-<a class="progress-step progress-step-gate progress-col-4 progress-span-1" href="flight-debug/motor-test.html">
-<strong>通过后进入</strong>
-<span>先过电机门禁</span>
+<div class="progress-slot progress-stack progress-col-6 progress-span-1" markdown>
+<div class="progress-branch" markdown>
+<a class="progress-step progress-step-nuc" href="nuc/index.html">
+<strong>NUC 配置</strong>
+<span>依赖/源码</span>
 </a>
-<a class="progress-step progress-step-nuc progress-col-5 progress-span-1" href="nuc/index.html">
-<strong>NUC 依赖 / 源码</strong>
-<span>init_mav路径</span>
-</a>
-<div class="progress-branch progress-col-6 progress-span-1">
 <a class="progress-step progress-step-nuc" href="nuc/mid360.html">
 <strong>Mid-360 配置</strong>
 <span>IP/config</span>
@@ -95,34 +115,30 @@
 <span>稳定输出</span>
 </a>
 </div>
-<a class="progress-step progress-step-gate progress-col-7 progress-span-1" href="flight-debug/ekf-gate.html">
+<a class="progress-step progress-step-gate" href="flight-debug/ekf-gate.html">
 <strong>EKF 融合检查</strong>
-<span>看 odom 输出</span>
+<span>NUC后进行</span>
 </a>
+</div>
 </div>
 
 <div class="progress-lane" markdown>
 <div class="progress-lane-title">可选分支</div>
-<a class="progress-step progress-step-optional progress-col-5 progress-span-1" href="nuc/realsense.html">
+<div class="progress-slot progress-col-6 progress-span-1" markdown>
+<a class="progress-step progress-step-optional" href="nuc/realsense.html">
 <strong>可选：RealSense</strong>
 <span>不阻塞主链路</span>
 </a>
-<a class="progress-step progress-step-optional progress-col-6 progress-span-1" href="nuc/realsense.html">
-<strong>相机验证可选</strong>
-<span>需要时再启动</span>
-</a>
-<a class="progress-step progress-step-optional progress-col-7 progress-span-1" href="nuc/realsense.html">
-<strong>不阻塞主链路</strong>
-<span>Mid-360优先</span>
-</a>
+</div>
 </div>
 
 </div>
 
 **关键依赖判断：**
 
-- 电机测试通过后，安装桨叶进行手飞测试，手飞测试通过后再进行 NUC / EKF 调试。
-- `/mavros/vision_pose/pose` 需要有稳定输出，然后再监控 `/mavros/local_position/odom` 话题格式对齐。
+- 电机测试通过后，安装桨叶进行 [手飞测试](flight-debug/manual-flight-test.md)，手飞测试通过后再进行 NUC / EKF 调试。
+- [EKF Gate 与融合检查](flight-debug/ekf-gate.md) 必须在完成 [NUC 配置](nuc/index.md) 后再进行；`/mavros/vision_pose/pose` 需要有稳定输出，然后再监控 `/mavros/local_position/odom` 话题格式对齐。
+- [定点环绕自主飞行测试流程](flight-debug/orbit-autonomous-test.md) 必须在 EKF Gate 与融合检查通过后再进行。
 - RealSense 是可选外设，不作为主定位链路的前置条件。
 
 ## 推荐操作路径
@@ -132,8 +148,10 @@
 3. 按 [通电前检查](hardware/checklist.md) 逐项确认电源、信号、机械固定和卸桨状态。
 4. 进入 [飞控调试](flight-debug/index.md)，用 QGC 备份参数，选择导入已有参数或按新飞控流程手动设置。
 5. 完成 [电机测试与反转](flight-debug/motor-test.md)，确认 Motor 1~4 的物理位置和转向。
-6. 配置 [NUC 软件链路](nuc/index.md)，检查 MAVROS、Mid-360、Point-LIO-new 和 `vision_pose` 输出。
-7. 最后做 [EKF Gate 与融合检查](flight-debug/ekf-gate.md)，确认外部定位已进入 PX4 EKF2。
+6. 完成 [手飞测试流程](flight-debug/manual-flight-test.md)。
+7. 配置 [NUC 软件链路](nuc/index.md)，检查 MAVROS、Mid-360、Point-LIO-new 和 `vision_pose` 输出。
+8. 完成 NUC 配置后，再做 [EKF Gate 与融合检查](flight-debug/ekf-gate.md)，确认外部定位已进入 PX4 EKF2。
+9. EKF Gate 与融合检查通过后，最后进入 [定点环绕自主飞行测试流程](flight-debug/orbit-autonomous-test.md)。
 
 ## 专题入口
 

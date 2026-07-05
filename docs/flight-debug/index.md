@@ -16,8 +16,10 @@
 3. 设置飞控安装方向、机架方向，并完成陀螺仪、加速度计、水平姿态等传感器校准。
 4. 检查 `DSHOT_CONFIG = DShot600` 和 `SYS_USE_IO = Disable PWM`，确认电调输出协议与接线方式一致。
 5. 在 [电机测试与反转](motor-test.md) 中逐个测试 Motor 1~4，核对电机编号和转向。编号不对先改 ESC1~ESC4 信号线；编号正确但方向错误，优先用 DShot 反转；最后才交换电机三相线。
-6. 电机编号与转向全部通过后，再启动 NUC 侧 MAVROS、Mid-360、Point-LIO 和 `vision_pose` 桥接。
-7. 在 [EKF Gate 与融合检查](ekf-gate.md) 中确认外部定位已进入 PX4 EKF2。
+6. 电机编号与转向全部通过后，进入 [手飞测试流程](manual-flight-test.md)。
+7. 手飞测试通过后，先完成 [NUC 配置](../nuc/index.md)，启动 MAVROS、Mid-360、Point-LIO 和 `vision_pose` 桥接。
+8. 完成 NUC 配置后，再在 [EKF Gate 与融合检查](ekf-gate.md) 中确认外部定位已进入 PX4 EKF2。
+9. EKF Gate 与融合检查通过后，再进入 [定点环绕自主飞行测试流程](orbit-autonomous-test.md)。
 
 ## 进入 NUC 前的通过标准
 
@@ -27,6 +29,7 @@
 - `DSHOT_CONFIG = DShot600`，`SYS_USE_IO = Disable PWM`。
 - Motor 1~4 的物理位置和转向全部符合 [电机测试与反转](motor-test.md) 中的标准。
 - 全部电机测试都在 **不安装桨叶** 的状态下完成。
+- [手飞测试流程](manual-flight-test.md) 已完成。
 
 ## 参考
 

@@ -10,7 +10,7 @@
     本教程中的机架结构与电机选型参考 [hku-mars/SUPER-Hardware](https://github.com/hku-mars/SUPER-Hardware)，实际安装时以当前 Super 飞机实物为准。
 
 !!! warning "安全边界"
-    焊接和通电前，需核对实物丝印、接口方向、正负极。碳板导电，任何裸露的电路板不要直接接触碳板；首次电机测试不要安装桨叶。
+    焊接和通电前，需核对实物丝印、接口方向、正负极。飞控使用具有减震作用的厚泡棉双面胶固定至机架；所有裸露电路板不要直接接触碳板；首次电机测试不要安装桨叶。
 
 <iframe class="diagram-frame hardware-frame" src="../assets/diagrams/hardware-wiring.html" title="硬件连线总览"></iframe>
 

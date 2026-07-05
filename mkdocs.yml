@@ -29,7 +29,9 @@ nav:
       - 方案一：导入参数文件: flight-debug/import-params.md
       - 方案二：新飞控手动调参: flight-debug/manual-params.md
       - 电机测试与反转: flight-debug/motor-test.md
+      - 手飞测试流程: flight-debug/manual-flight-test.md
       - EKF Gate 与融合检查: flight-debug/ekf-gate.md
+      - 定点环绕自主飞行测试流程: flight-debug/orbit-autonomous-test.md
   - 三、NUC 配置:
       - 总览: nuc/index.md
       - Mid-360 雷达配置: nuc/mid360.md

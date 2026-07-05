@@ -87,10 +87,10 @@
 
 .progress-phase-row {
   display: grid;
-  grid-template-columns: minmax(4.2rem, 0.7fr) repeat(8, minmax(4.4rem, 1fr));
+  grid-template-columns: minmax(4.2rem, 0.7fr) repeat(7, minmax(4.4rem, 1fr));
   gap: 0.3rem;
   align-items: stretch;
-  min-width: 650px;
+  min-width: 600px;
 }
 
 .progress-phase-corner,
@@ -119,10 +119,10 @@
 
 .progress-lane {
   display: grid;
-  grid-template-columns: minmax(4.2rem, 0.7fr) repeat(8, minmax(4.4rem, 1fr));
+  grid-template-columns: minmax(4.2rem, 0.7fr) repeat(7, minmax(4.4rem, 1fr));
   gap: 0.3rem;
   align-items: stretch;
-  min-width: 650px;
+  min-width: 600px;
 }
 
 .progress-lane-title {
@@ -184,6 +184,27 @@
   gap: 0.3rem;
 }
 
+.progress-slot {
+  display: grid;
+  min-width: 0;
+}
+
+.progress-stack {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.progress-slot > p,
+.progress-stack > p,
+.progress-branch > p {
+  display: contents;
+  margin: 0;
+}
+
+.progress-slot .progress-step {
+  width: 100%;
+}
+
 .progress-step-safety {
   border-left: 2px solid #64748b;
   background: #f7f9fc;
@@ -212,36 +233,32 @@
   border-style: dashed;
 }
 
-.progress-col-0 {
+.progress-col-1 {
   grid-column-start: 2;
 }
 
-.progress-col-1 {
+.progress-col-2 {
   grid-column-start: 3;
 }
 
-.progress-col-2 {
+.progress-col-3 {
   grid-column-start: 4;
 }
 
-.progress-col-3 {
+.progress-col-4 {
   grid-column-start: 5;
 }
 
-.progress-col-4 {
+.progress-col-5 {
   grid-column-start: 6;
 }
 
-.progress-col-5 {
+.progress-col-6 {
   grid-column-start: 7;
 }
 
-.progress-col-6 {
-  grid-column-start: 8;
-}
-
 .progress-col-7 {
-  grid-column-start: 9;
+  grid-column-start: 8;
 }
 
 .progress-span-1 {
