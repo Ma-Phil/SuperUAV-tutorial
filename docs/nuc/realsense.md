@@ -14,6 +14,10 @@ realsense-ros 2.3.2
 ~/rosprojects/init_mav/realsense_ros_ws/src/realsense-ros
 ```
 
+## 相机支架
+
+Super 飞机与 RealSense D400/T265 相机的支架模型及预览图见 [相机支架模型](../hardware/realsense-mount.md)。
+
 ## 安装 librealsense SDK
 
 ```bash
