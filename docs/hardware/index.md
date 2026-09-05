@@ -43,3 +43,7 @@ F60 电调 8pin SH1.0 转杜邦，接 PIX6C MINI FMU PWM OUT / AUX OUT。
 </div>
 
 </div>
+
+## 相机支架模型
+
+[Super 飞机与 RealSense D400/T265 相机支架](realsense-mount.md)：提供 STEP 模型下载与支架预览图。
